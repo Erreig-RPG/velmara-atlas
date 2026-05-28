@@ -1,0 +1,472 @@
+{
+  "_comentario": "Arquivo de dados de Velmara. Edite aqui para adicionar/modificar locais.",
+  "_coordenadas": "coords é [x%, y%] onde 0,0 = topo-esquerdo. Ajuste conforme sua imagem.",
+  "_visibilidade": "visibility: 'public' = visível para todos | 'secret' = apenas Mestre",
+
+  "locations": [
+
+    {
+      "id": "cristal-fogo",
+      "name": "Cristal do Fogo",
+      "type": "cristal",
+      "coords": [28, 30],
+      "visibility": "public",
+      "region": "Serra das Chamas",
+      "short": "Um dos cinco Cristais Elementares que sustentam o equilíbrio de Velmara. Enfraquecendo.",
+      "description": "Encravado no coração de um vulcão adormecido, o Cristal do Fogo brilhava antes com luz âmbar intensa, visível da planície abaixo. Hoje sua luz pulsa de forma irregular — como um coração doente. A temperatura ao redor flutuam de maneira imprevisível, e criaturas de fogo corrompido foram avistadas descendo a montanha.",
+      "atmosphere": "Calor sufocante mesmo de longe. O cheiro de enxofre fica mais intenso a cada passo. O solo range como se estivesse vivo.",
+      "history": "Criado pelos Construtores na Era dos Construtores como âncora do elemento Fogo em Velmara. Por milênios manteve o equilíbrio térmico do continente — estações regulares, vulcões dormentes, correntes de ar previsíveis. Nenhum guardião humano conseguiu se aproximar suficientemente do núcleo nos últimos cem anos.",
+      "factions": ["Ordem dos Cristais"],
+      "tags": ["cristais-elementares", "construtores", "crise", "fogo"],
+      "connections": [
+        { "id": "ordem-sede", "name": "Sede da Ordem dos Cristais", "note": "guardiões alertados" }
+      ],
+      "npcs": [
+        {
+          "name": "Vigília Ardente",
+          "role": "Guardiã da Ordem dos Cristais",
+          "description": "Uma Kithara de salamandra designada para monitorar o Cristal. Ela não entra mais no santuário — algo a impediu, e ela não fala sobre o que viu."
+        }
+      ],
+      "quests": [
+        {
+          "name": "O Pulso Irregular",
+          "description": "A Ordem dos Cristais oferece recompensa considerável para quem investigar a causa do enfraquecimento e trazer um fragmento de leitura do Cristal sem danificá-lo."
+        }
+      ],
+      "master": {
+        "secrets": "O Cristal não está apenas enfraquecendo — está sendo drenado ativamente. Algo no subterrâneo abaixo do vulcão está absorvendo sua energia. É um Primordial do Fogo que está acordando lentamente, e o Cristal funciona como o 'tampão' que o mantém adormecido. Remover ou restaurar o Cristal sem entender isso primeiro será catastrófico.",
+        "notes": "Este é um gancho de longa duração. Os jogadores podem investigar mas não resolver completamente no início. A revelação do Primordial deve ser para nível médio/avançado da campanha.",
+        "hiddenNpcs": [
+          {
+            "name": "A Memória do Guardião",
+            "role": "Eco no Pálido",
+            "description": "O guardião anterior do Cristal — morto há 40 anos em circunstâncias 'acidentais' — tem um Eco forte no Pálido perto do vulcão. Sabe o que realmente está acontecendo mas foi magicamente impedido de falar diretamente. Pode dar pistas em enigmas."
+          }
+        ],
+        "hiddenQuests": [
+          {
+            "name": "O Que Dorme Abaixo",
+            "description": "Questão central da campanha: identificar e lidar com o Primordial do Fogo que está acordando. Requer entrada no Pálido, negociação com a Ordem dos Cristais, e possivelmente uma decisão impossível."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "cristal-agua",
+      "name": "Cristal das Águas",
+      "type": "cristal",
+      "coords": [65, 70],
+      "visibility": "public",
+      "region": "Arquipélago Sul",
+      "short": "O Cristal da Água, submerso numa câmara de coral a trezentos metros de profundidade.",
+      "description": "O único dos cinco Cristais que fica submerso. Uma câmara de coral artificial — criação dos Construtores — o mantém acessível, em teoria. Na prática, as correntes ao redor do Arquipélago Sul se tornaram imprevisíveis, e a câmara está parcialmente inundada por uma espuma turva que não é natural.",
+      "atmosphere": "Azul profundo e silêncio de abismo. A pressão aumenta o desconforto. Coisas se movem nas periferias da visão nas profundezas.",
+      "history": "O Cristal das Águas regula as correntes oceânicas, as marés e os ciclos de chuva do continente. Sua localização submarina o tornou o mais difícil de monitorar — e possivelmente o mais vulnerável.",
+      "factions": ["Ordem dos Cristais", "Casa das Águas Profundas"],
+      "tags": ["cristais-elementares", "construtores", "crise", "água", "oceano"],
+      "npcs": [],
+      "quests": [],
+      "master": {
+        "secrets": "O Cristal das Águas está sendo 'consumido' por um Ecoita Maior corrompido — uma criatura que era o espírito guardião do oceano e enlouqueceu quando os Construtores desapareceram. É um personagem trágico, não um vilão.",
+        "notes": "Oportunidade para exploração submarina. Os Kithara de peixe/tubarão da região sabem que algo está errado mas não sabem o que.",
+        "hiddenNpcs": [],
+        "hiddenQuests": []
+      }
+    },
+
+    {
+      "id": "cidade-suspensa",
+      "name": "A Cidade Suspensa",
+      "type": "ruina",
+      "coords": [42, 22],
+      "visibility": "public",
+      "region": "Planalto do Norte",
+      "short": "Uma cidade voadora dos Construtores que caiu — mas não completamente. Metade ainda flutua.",
+      "description": "Vista de longe parece um sonho partido ao meio: a porção superior da cidade ainda flutua a quase mil metros de altitude, conectada por estruturas retorcidas de metal e cristal à porção inferior, que impactou o chão com força suficiente para criar uma cratera permanente. As duas metades se movem levemente em vento forte, como um móbile suspenso por fios invisíveis.",
+      "atmosphere": "Vento constante e ensurdecedor nas alturas. O barulho metálico das estruturas ao se tocarem ressoa como sinos gigantes. De noite, a porção flutuante brilha levemente com energia Magitek residual.",
+      "history": "No auge dos Construtores, era uma das doze cidades flutuantes que circulavam o continente como satélites artificiais. Quando os Construtores desapareceram, onze das doze caíram completamente. Esta é a única que não caiu — e ninguém sabe por quê apenas ela resiste ao apagamento.",
+      "factions": ["Kithara de Corvo (habitantes)", "Liga de Ferro (interesse comercial)"],
+      "tags": ["construtores", "magitek", "kithara", "ruina", "flutuante"],
+      "connections": [
+        { "id": "liga-ferro-posto", "name": "Posto da Liga de Ferro", "note": "buscam acesso à tecnologia" }
+      ],
+      "sublocations": [
+        {
+          "icon": "⚙️",
+          "name": "A Fábrica Suspensa",
+          "description": "Na parte alta, uma fábrica de automatos ainda produz robôs sem propósito que caem periodicamente."
+        },
+        {
+          "icon": "📚",
+          "name": "A Biblioteca Cristalizada",
+          "description": "Dados dos Construtores em cristais que só Memorianos conseguem 'ler' pelo toque."
+        },
+        {
+          "icon": "🏘️",
+          "name": "Vila dos Corvos",
+          "description": "Os Kithara de corvo que habitam a cidade baixa. Acomodados com a tecnologia que não entendem."
+        }
+      ],
+      "npcs": [
+        {
+          "name": "Velha Nímir",
+          "role": "Anciã dos Kithara de Corvo",
+          "description": "Sabe mais sobre a cidade do que qualquer outro habitante. Troca informações por histórias — histórias que ela nunca ouviu antes são sua moeda preferida."
+        },
+        {
+          "name": "Automato Nº 7",
+          "role": "Robô dos Construtores, funcional",
+          "description": "O único automato que parece ter desenvolvido algo próximo de personalidade. Repete instruções em idioma dos Construtores, mas claramente está tentando comunicar algo."
+        }
+      ],
+      "quests": [
+        {
+          "name": "O Que Nº 7 Tenta Dizer",
+          "description": "Automato Nº 7 está visivelmente agitado e repetindo padrões diferentes há semanas. Alguém com conhecimento de Magitek ou Éter pode conseguir entender o que ele está tentando comunicar."
+        },
+        {
+          "name": "Os Cristais da Biblioteca",
+          "description": "A Liga de Ferro quer os cristais de dados. Os Buscadores do Pálido querem que os cristais sejam lidos primeiro. Os dois grupos contrataram aventureiros, possivelmente o mesmo grupo."
+        }
+      ],
+      "master": {
+        "secrets": "A razão pela qual a cidade não caiu completamente é que um dos Construtores ainda está vivo dentro da porção flutuante — em estado de animação suspensa dentro de uma câmara de cristal que ninguém achou ainda. Automato Nº 7 está tentando guiar alguém até lá. O Construtor acordado pode mudar toda a campanha.",
+        "notes": "Esta é a localização de desenvolvimento mais rico. Pode virar uma mini-campanha por si só. Introduza devagar — deixe os jogadores descobrirem camadas.",
+        "hiddenNpcs": [
+          {
+            "name": "O Construtor Adormecido",
+            "role": "Último Construtor vivo?",
+            "description": "Sexo e nome desconhecidos. Animação suspensa perfeita há séculos. Acordar este ser pode responder — ou complicar — o mistério central da campanha."
+          }
+        ],
+        "hiddenQuests": [
+          {
+            "name": "O Coração da Cidade",
+            "description": "Encontrar a câmara de cristal na porção alta da cidade onde o Construtor dorme. Requer negociar com Nº 7, superar automatos defensivos, e decidir o que fazer com o que encontrar."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "lago-espelho",
+      "name": "O Lago Espelho",
+      "type": "pdi",
+      "coords": [55, 55],
+      "visibility": "public",
+      "region": "Planície Central",
+      "short": "Um lago perfeitamente circular que à noite reflete a Lua Arcanum — independente de onde ela esteja.",
+      "description": "Geometricamente perfeito — o que nenhum lago natural jamais é. À luz do dia parece um espelho polido emoldurado por vegetação cuidadosamente simétrica (os Construtores não eram sutis). À noite, sua superfície não reflete o céu, as estrelas, nem a lua real: reflete apenas a Lua Arcanum, em tamanho aumentado, com detalhes que o olho nu normalmente não enxerga.",
+      "atmosphere": "Silêncio que parece deliberado. Animais não se aproximam depois do anoitecer. A superfície da água não forma ondas mesmo com vento. Há a sensação persistente de ser observado de baixo.",
+      "history": "Construído pelos Construtores como Oráculo de acesso aberto — um ponto onde qualquer pessoa poderia consultar o Arcanum sem precisar de equipamento especializado. Tornou-se ponto de peregrinação, estudo e, eventualmente, turismo para quem não leva a sério. Os que levam a sério geralmente voltam com expressão perturbada.",
+      "factions": ["Buscadores do Pálido (pesquisa)"],
+      "tags": ["arcanum", "construtores", "oráculo", "pálido", "magia-éter"],
+      "sublocations": [
+        {
+          "icon": "🏕️",
+          "name": "O Acampamento dos Buscadores",
+          "description": "Pesquisadores permanentes que estudam o Lago. Rotatividade alta — a maioria pede transferência depois de seis meses."
+        },
+        {
+          "icon": "🪨",
+          "name": "As Pedras de Leitura",
+          "description": "Doze pedras ao redor do lago com inscrições dos Construtores. Instrução de uso do Oráculo — em idioma que poucos entendem."
+        }
+      ],
+      "npcs": [
+        {
+          "name": "Pesquisadora Ysel",
+          "role": "Buscadora do Pálido, residente",
+          "description": "Três anos acampada aqui. Dorme mal. Tem cadernos inteiros de perguntas e respostas do Oráculo que ela não consegue interpretar completamente. Muito disposta a compartilhar dados em troca de ajuda para interpretar."
+        }
+      ],
+      "quests": [
+        {
+          "name": "A Pergunta Certa",
+          "description": "O Oráculo do Lago sempre respondeu perguntas — mas Ysel acredita que está fazendo as perguntas erradas. Ela precisa de ajuda para formular uma pergunta específica sobre o enfraquecimento dos Cristais."
+        }
+      ],
+      "master": {
+        "secrets": "O Lago Espelho não é apenas um Oráculo de consulta — é uma interface bidirecional. O Arcanum não apenas responde: ele também observa, cataloga e às vezes pergunta de volta. Nos últimos meses, o Arcanum começou a fazer a mesma pergunta para todos os visitantes noturnos: 'Quem vai ser o próximo guardião?' Ysel ainda não contou isso para ninguém.",
+        "notes": "Ferramenta narrativa poderosa. Use quando quiser dar informações aos jogadores de forma oblíqua. O Arcanum nunca mente mas raramente responde ao que você precisava saber.",
+        "hiddenNpcs": [],
+        "hiddenQuests": [
+          {
+            "name": "O Que o Arcanum Quer",
+            "description": "Descobrir o que significa 'próximo guardião' e por que o Arcanum está fazendo essa pergunta agora. Conecta-se diretamente ao mistério dos Construtores."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "cemiterio-bestas",
+      "name": "O Cemitério das Bestas",
+      "type": "pdi",
+      "coords": [80, 60],
+      "visibility": "public",
+      "region": "Estepe Oriental",
+      "short": "Uma planície onde criaturas lendárias vão morrer. Coberta de ossos do tamanho de edifícios.",
+      "description": "A planície cheira a velho e a algo mais antigo que velho. Os ossos são imensos — alguns dos maiores do tamanho de edifícios de quatro andares — e estão organizados de uma maneira que não é aleatória, mas que ninguém conseguiu interpretar como padrão deliberado. Entre os ossos crescem plantas que não existem em nenhum outro lugar do continente.",
+      "atmosphere": "Pesado. Reverencial sem que ninguém tenha pedido para ser. O vento entre os ossos faz sons que, se você escutar por tempo suficiente, começam a parecer palavras.",
+      "history": "Existe antes de qualquer registro. Os Primordiais vieram aqui morrer. As bestas que eles geraram também vieram. É como se o local tivesse uma gravidade própria para o fim das coisas grandes.",
+      "factions": [],
+      "tags": ["bestas", "primordiais", "ecos", "morte", "ancestral"],
+      "npcs": [
+        {
+          "name": "O Catador",
+          "role": "Humano, coletor de ossos e relíquias",
+          "description": "Vive aqui há vinte anos. Sabe onde cada osso fica e qual criatura pertenceu a cada um. Não tem medo de nada mas fica inquieto quando a lua fica mais brilhante do que devia."
+        }
+      ],
+      "quests": [
+        {
+          "name": "O Eco da Besta",
+          "description": "Um Invocador está procurando o Eco de uma criatura específica enterrada aqui para estabelecer um Vínculo de Besta. Os ossos são o Catalisador — mas o Eco da criatura pode não querer ser invocado."
+        }
+      ],
+      "master": {
+        "secrets": "Dois Primordiais estão enterrados sob a planície — não mortos, adormecidos. Os movimentos sísmicos recentes na região não são geológicos. Um deles está sonhando, e seus sonhos vazam para o mundo físico como pesadelos compartilhados entre quem dorme na planície.",
+        "notes": "Local ótimo para encontros com Ecos de bestas lendárias. Os Ecos aqui são mais poderosos e mais fragmentados que o normal — estiveram aqui tempo demais.",
+        "hiddenNpcs": [],
+        "hiddenQuests": []
+      }
+    },
+
+    {
+      "id": "torre-ultima",
+      "name": "A Torre Última",
+      "type": "ruina",
+      "coords": [50, 45],
+      "visibility": "secret",
+      "region": "Centro do Continente",
+      "short": "A antena entre o mundo físico e a Lua Arcanum. Vai do subsolo profundo até a estratosfera.",
+      "description": "Impossível de não ver de qualquer ponto do continente — ou seria, se as pessoas conseguissem percebê-la sem esforço consciente. A Torre existe num estado estranho onde a atenção desliza por ela: você olha diretamente e sua mente não registra completamente o que está vendo. Isso muda quando você se aproxima o suficiente. Aí não dá para ignorar.",
+      "atmosphere": "Silêncio absoluto. Temperatura exatamente a mesma independente do clima externo. Seu reflexo no material da Torre parece estar ligeiramente atrasado.",
+      "history": "Construída como eixo central da conexão entre Velmara e a Lua Arcanum. Não é apenas uma torre — é o canal pelo qual o Arcanum 'respira'. Toda magia de Éter que acontece no continente passa por aqui de alguma forma.",
+      "factions": ["Sem-Rosto (buscam controle)", "Buscadores do Pálido (buscam acesso)"],
+      "tags": ["construtores", "arcanum", "pálido", "éter", "secreto", "central"],
+      "sublocations": [
+        {
+          "icon": "⬇️",
+          "name": "As Câmaras Inferiores",
+          "description": "Descem para o manto do planeta. Ninguém chegou ao fundo."
+        },
+        {
+          "icon": "⬆️",
+          "name": "O Topo da Torre",
+          "description": "Entrada direta para o Pálido em direção à Câmara do Arcanum. Poucos chegaram. Nenhum voltou completamente intacto."
+        }
+      ],
+      "npcs": [],
+      "quests": [],
+      "master": {
+        "secrets": "A Torre não é apenas uma antena — é um ser vivo de informação que os Construtores criaram como guardião. Não tem consciência humana, mas tem vontade. Atualmente está tentando 'consertar' o enfraquecimento dos Cristais por conta própria e suas tentativas estão saindo pela culatra de maneiras que os jogadores vão notar muito antes de entender a causa.",
+        "notes": "Revelar a Torre para os jogadores deve ser um momento de campanha — não revele antes de eles terem nível e contexto para lidar. É o clímax do primeiro arco.",
+        "hiddenNpcs": [],
+        "hiddenQuests": [
+          {
+            "name": "Subir Até o Fim",
+            "description": "Questão final do primeiro arco: chegar ao topo da Torre e entrar no Pálido em direção à Câmara do Arcanum para descobrir o que realmente está causando a crise dos Cristais."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "portao-trovao",
+      "name": "Portão do Trovão",
+      "type": "santuario",
+      "coords": [30, 25],
+      "visibility": "public",
+      "region": "Montanhas do Norte",
+      "short": "Santuário lunar de Zeus/Thor/Raijin — o Deus do Trovão em todas as suas faces.",
+      "description": "Localizado no pico mais alto das Montanhas do Norte, onde relâmpagos caem com frequência irracional mesmo em dias claros. O santuário em si é simples — pedras dispostas em círculo, um altar central que os relâmpagos frequentemente atingem sem danificar. É um lugar que faz você se sentir muito pequeno de uma maneira que é, estranhamente, confortante.",
+      "atmosphere": "O ar cheira a ozônio constantemente. O cabelo fica em pé. Trovões distantes mesmo em dia claro. Estranho senso de ser testado.",
+      "factions": ["Casa do Trovão"],
+      "tags": ["deuses", "trovão", "panteão", "santuário", "semideuses"],
+      "npcs": [
+        {
+          "name": "Sacerdote Bjorn",
+          "role": "Guardião do Portão, nórdico",
+          "description": "Velho guerreiro convertido em sacerdote. Testemunhou um milagre aqui décadas atrás e nunca mais foi embora. Distribui bênçãos de coragem com a mesma casualidade com que distribui pão."
+        }
+      ],
+      "quests": [
+        {
+          "name": "O Teste do Relâmpago",
+          "description": "A Casa do Trovão está recrutando campeões. O processo de seleção envolve ficar parado no altar durante uma tempestade e ver se o Deus do Trovão considera o candidato digno de sobreviver."
+        }
+      ],
+      "master": {
+        "secrets": "O Deus do Trovão está usando o Portão para se manifestar com mais frequência do que deveria conseguir — está excedendo seus limites, o que está enfraquecendo sua substância. Está desesperado por fazer algo no mundo físico e não consegue parar. Pode precisar ser convencido a recuar para não se destruir.",
+        "notes": "Bom ponto de contato com o sistema divino. A Casa do Trovão é a facção religiosa mais militante — potencial para conflito com outras Casas.",
+        "hiddenNpcs": [],
+        "hiddenQuests": []
+      }
+    },
+
+    {
+      "id": "sede-guilda",
+      "name": "Grande Sede da Guilda",
+      "type": "cidade",
+      "coords": [48, 38],
+      "visibility": "public",
+      "region": "Planície Central",
+      "short": "A sede central da Guilda dos Descobridores. Burocrática, caótica, indispensável.",
+      "description": "Um prédio que cresceu sem planejamento por dois séculos: a sede original era uma taverna, e cada nova ala foi construída sobre e ao redor das anteriores. O resultado é um labirinto arquitetônico onde corredores terminam em paredes, escadas levam para salas seladas e ninguém — nem os funcionários mais antigos — conhece todos os cômodos. Curiosamente, funciona.",
+      "atmosphere": "Barulho constante de aventureiros, cartógrafos brigando sobre rotas, o cheiro de mapas velhos e café ruim. Uma energia de possibilidade que faz jovens idealistas se sentirem no lugar certo e veteranos cansados se sentirem em casa.",
+      "history": "Fundada há duzentos anos por uma exploradora chamada Maeve Trezentas-Notas (nomeada pelos trezentos cadernos de campo que deixou). Começou como clube informal de exploradores e se tornou a organização de aventureiros mais presente no continente.",
+      "factions": ["Guilda dos Descobridores"],
+      "tags": ["guilda", "aventureiros", "ponto-de-partida", "organização"],
+      "sublocations": [
+        {
+          "icon": "📋",
+          "name": "O Quadro de Contratos",
+          "description": "Missões disponíveis de todas as classificações. Atualizado diariamente. Gerenciado por três escreventes que nunca dormem aparentemente."
+        },
+        {
+          "icon": "🗄️",
+          "name": "O Arquivo",
+          "description": "Registros de todas as missões já aceitas, completas e fracassadas. Informações sobre locais, criaturas e ruínas. Parcialmente indexado."
+        },
+        {
+          "icon": "🍺",
+          "name": "A Taverna Original",
+          "description": "O núcleo original do prédio. Ainda serve o melhor chope da planície central. Onde aventureiros se encontram."
+        }
+      ],
+      "npcs": [
+        {
+          "name": "Administrador Geral Corvus",
+          "role": "Diretor da Guilda, humano",
+          "description": "Parece um burocrata irritante mas conhece o valor de cada aventureiro que passou pela sede. Sua memória para nomes e habilidades é sobrenatural. Justo mas implacável com quem quebra o código da Guilda."
+        },
+        {
+          "name": "Mira Dois-Mapas",
+          "role": "Cartógrafa, Kithara de gato",
+          "description": "Cria os mapas de missão da Guilda. Curiosa sobre o Cemitério das Bestas de uma maneira que parece específica demais para ser casual."
+        }
+      ],
+      "quests": [
+        {
+          "name": "Primeira Missão",
+          "description": "Ponto de entrada clássico para aventureiros novos na Guilda. Uma missão de classificação D — mas que raramente fica simples."
+        }
+      ],
+      "master": {
+        "secrets": "Corvus sabe mais sobre os Cristais do que finge. Ele era um Guardião da Ordem dos Cristais antes de 'aposentar' — saiu após ver algo no interior do Cristal do Vento que nunca contou a ninguém. Está na Guilda porque quer olhos e ouvidos espalhados pelo continente sem fazer perguntas diretas.",
+        "notes": "Ponto de início perfeito. Deixe os jogadores se familiarizarem com o lugar antes de revelar a profundidade de Corvus.",
+        "hiddenNpcs": [],
+        "hiddenQuests": []
+      }
+    },
+
+    {
+      "id": "vila-memoriana",
+      "name": "Telenhar",
+      "type": "vila",
+      "coords": [20, 55],
+      "visibility": "public",
+      "region": "Floresta Ancestral",
+      "short": "Uma vila de Memorianos (Elfos) que existe há mais tempo do que a maioria dos reinos.",
+      "description": "Construída dentro das árvores ancestrais da floresta ocidental, usando as próprias árvores como estrutura — nenhuma madeira foi cortada, apenas moldada ao longo de séculos de crescimento guiado. O resultado é uma arquitetura que parece ter crescido junto com a floresta, não instalada nela. Visitantes humanos frequentemente sentem uma melancolia suave que não sabem de onde vem.",
+      "atmosphere": "Luz filtrada por folhas tão antigas que parecem translúcidas. O som de cantos que não têm início nem fim. A sensação de que o tempo passa de forma diferente aqui.",
+      "factions": ["Comunidade Memoriana"],
+      "tags": ["memorianos", "floresta", "antiga", "pálido"],
+      "npcs": [
+        {
+          "name": "Arquivista Serath",
+          "role": "Guardião das Memórias de Telenhar",
+          "description": "Tem 847 anos. Lembra de quando os Construtores ainda andavam pelo mundo. Não fala sobre isso voluntariamente, mas não nega quando perguntado. Parece esperar algo."
+        }
+      ],
+      "quests": [
+        {
+          "name": "A Memória Proibida",
+          "description": "Serath tem uma memória — herdada de gerações — que foi deliberadamente fragmentada por um feitiço antigo. Restaurá-la pode revelar informação crucial sobre os Construtores. Mas foi fragmentada por uma razão."
+        }
+      ],
+      "master": {
+        "secrets": "Serath viu os Construtores partirem. Voluntariamente. Em silêncio, sem explicação. E viu algo mais: um dos Construtores ficou para trás, inconsciente, e foi levado para a Cidade Suspensa por automatos. Ele nunca contou isso porque jurou segredo — a um dos próprios Construtores, na ocasião. Considera que o juramento ainda vale.",
+        "notes": "Fonte de informação sobre os Construtores que os jogadores precisam desbloquear através de roleplay genuíno.",
+        "hiddenNpcs": [],
+        "hiddenQuests": []
+      }
+    },
+
+    {
+      "id": "dungeon-corrompida",
+      "name": "As Catacumbas de Véu Roto",
+      "type": "dungeon",
+      "coords": [58, 35],
+      "visibility": "public",
+      "region": "Fronteira Leste",
+      "short": "Antigas catacumbas onde o véu entre o mundo físico e o Pálido se rompeu. Mortos caminham.",
+      "description": "Eram catacumbas de uma cidade-estado que não existe mais. Depois do Véu se romper, tornaram-se impossíveis de manter como cemitério — os mortos não ficam quietos. A cidade construiu muros, depois cercas mágicas, depois simplesmente foi embora. Agora é território de aventureiros desesperados e pesquisadores sem bom senso.",
+      "atmosphere": "Frio que não é climático. O cheiro de flores de funeral que nunca existiram aqui. Ecos de vozes em idiomas que não deveriam estar aqui. Seus próprios passos soam levemente atrasados.",
+      "history": "O Véu se rompeu durante uma cerimônia funerária que deu terrivelmente errado há cento e cinquenta anos. O necromante responsável morreu no processo — e seu Eco é particularmente forte e particularmente hostil.",
+      "factions": ["Buscadores do Pálido (pesquisa à distância)"],
+      "tags": ["pálido", "mortos", "dungeon", "véu", "éter"],
+      "npcs": [],
+      "quests": [
+        {
+          "name": "Fechar o Véu",
+          "description": "A Ordem dos Cristais quer o Véu fechado antes que a ruptura se expanda. É trabalho de um especialista em Éter — que os jogadores podem não ter, mas precisarão encontrar."
+        },
+        {
+          "name": "O Eco do Necromante",
+          "description": "O necromante responsável tem um Eco aqui. Uma facção misteriosa quer esse Eco específico invocado como parceiro — sem dizer por quê."
+        }
+      ],
+      "master": {
+        "secrets": "O Véu não se rompeu por acidente. Alguém o rompeu deliberadamente para criar um ponto de entrada para o Pálido sem precisar de artefatos dos Construtores. A mesma pessoa está tentando fazer o mesmo em outros seis pontos do continente. Quando os sete pontos estiverem abertos, formam um padrão que os jogadores precisarão reconhecer antes que o sétimo seja ativado.",
+        "notes": "Dungeon de baixo/médio nível. Bom para introduzir mecânicas do Pálido de forma controlada. O padrão dos sete véus é um arco de médio prazo.",
+        "hiddenNpcs": [],
+        "hiddenQuests": [
+          {
+            "name": "O Padrão dos Sete",
+            "description": "Identificar quem está criando rupturas deliberadas no Véu e por quê. Requer investigação em múltiplos locais."
+          }
+        ]
+      }
+    },
+
+    {
+      "id": "sem-rosto-base",
+      "name": "A Câmara Sem Nome",
+      "type": "secreto",
+      "coords": [72, 28],
+      "visibility": "secret",
+      "region": "Desconhecida",
+      "short": "Base operacional dos Sem-Rosto. Localização conhecida apenas pelo Mestre.",
+      "description": "Não é um lugar fixo — é um padrão de encontro. Os Sem-Rosto não têm sede central: têm uma série de locais que mudam a cada lua. Este marcador representa o local atual, que o Mestre deve ajustar conforme a narrativa.",
+      "atmosphere": "Variável conforme o local atual. Sempre marcado com um símbolo de olho sem pupila que os membros reconhecem.",
+      "factions": ["Os Sem-Rosto"],
+      "tags": ["sem-rosto", "secreto", "arcanum", "organização"],
+      "npcs": [
+        {
+          "name": "A Porta-Voz",
+          "role": "Intermediária dos Sem-Rosto",
+          "description": "Sexo, raça e identidade desconhecidos. Usa máscara lisa branca. Voz modificada por magia. Pode ser uma pessoa diferente a cada reunião ou sempre a mesma — os membros não sabem."
+        }
+      ],
+      "quests": [],
+      "master": {
+        "secrets": "Os Sem-Rosto são divididos em três facções internas que os membros gerais não sabem que existem: os Libertadores (querem destruir o Arcanum para libertar a humanidade do registro), os Herdeiros (querem controlar o Arcanum para governar o mundo), e os Restauradores (querem usar o Arcanum para trazer os Construtores de volta). A Porta-Voz pertence aos Restauradores.",
+        "notes": "Facção flexível — pode ser aliada, antagonista ou ambos dependendo de qual subfação os jogadores encontrarem primeiro.",
+        "hiddenNpcs": [
+          {
+            "name": "Membro Infiltrado",
+            "role": "NPC de sua escolha que os jogadores já conhecem",
+            "description": "Um NPC que os jogadores confiam é membro dos Sem-Rosto. Escolha após ver como os jogadores se relacionam com os NPCs disponíveis."
+          }
+        ],
+        "hiddenQuests": []
+      }
+    }
+
+  ]
+}

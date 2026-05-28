@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velmara — Mapa Interativo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ═══ MASTER LOGIN MODAL ═══
+       Ativado por 5 cliques rápidos no título ✦ VELMARA ✦
+       Não há botão visível — evita curiosidade dos jogadores -->
+  <div id="master-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-glyph">⚔</div>
+      <h2 class="modal-title">Acesso Restrito</h2>
+      <p class="modal-desc">Área reservada ao Narrador</p>
+      <input type="password" id="master-password-input"
+             placeholder="••••••" autocomplete="off" spellcheck="false"/>
+      <div class="modal-buttons">
+        <button id="btn-master-enter" class="btn-primary">Confirmar</button>
+        <button id="btn-master-cancel" class="btn-ghost">Cancelar</button>
+      </div>
+      <p id="master-error" class="modal-error hidden">Senha incorreta.</p>
+    </div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header id="app-header">
+    <!-- Clique 5x aqui para abrir login do Mestre -->
+    <div class="header-brand" id="master-trigger" title="Velmara">
+      <span class="brand-orn">✦</span>
+      <span class="brand-name">VELMARA</span>
+      <span class="brand-orn">✦</span>
+    </div>
+
+    <div class="header-center">
+      <div id="filter-bar">
+        <button class="filter-btn active" data-type="all">Todos</button>
+        <button class="filter-btn" data-type="cidade">Cidades</button>
+        <button class="filter-btn" data-type="vila">Vilas</button>
+        <button class="filter-btn" data-type="ruina">Ruínas</button>
+        <button class="filter-btn" data-type="dungeon">Dungeons</button>
+        <button class="filter-btn" data-type="pdi">Interesses</button>
+        <button class="filter-btn" data-type="cristal">Cristais</button>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="Buscar locais..."/>
+        <div id="search-results" class="hidden"></div>
+      </div>
+      <!-- Aparece apenas em modo Mestre -->
+      <div id="master-badge" class="hidden">
+        <span class="badge-icon">⚔</span>
+        <span class="badge-label">Narrador</span>
+        <button id="btn-master-exit" title="Encerrar sessão">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAPA ═══ -->
+  <div id="map-wrapper">
+    <div id="map"></div>
+
+    <!-- Mostrado se a imagem do mapa não for encontrada -->
+    <div id="map-placeholder" class="hidden">
+      <div class="placeholder-inner">
+        <div class="placeholder-icon">🗺️</div>
+        <h3>Mapa Não Encontrado</h3>
+        <p>Adicione a imagem do mapa em</p>
+        <code>assets/map/velmara.jpg</code>
+        <p class="placeholder-note">Os marcadores e o painel lateral funcionam normalmente</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ PAINEL LATERAL DE LOCALIZAÇÃO ═══ -->
+  <div id="location-panel" class="panel hidden">
+    <button id="panel-close" class="panel-close-btn" title="Fechar">✕</button>
+    <div id="panel-scroll">
+      <div id="panel-content">
+        <!-- Preenchido dinamicamente pelo JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BOTÃO FLUTUANTE (apenas Mestre) ═══ -->
+  <div id="master-toolbar" class="hidden">
+    <button id="btn-toggle-secrets" class="fab-sm" title="Mostrar/ocultar segredos">
+      <span id="secrets-icon">🔒</span>
+    </button>
+    <button id="btn-add-mode" class="fab-sm" title="Modo: adicionar local ao mapa">＋</button>
+  </div>
+
+  <!-- ═══ TOOLTIP DE MODO ADIÇÃO ═══ -->
+  <div id="add-mode-tip" class="hidden">
+    Clique no mapa para posicionar o novo local &nbsp;
+    <button id="btn-cancel-add">Cancelar</button>
+  </div>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

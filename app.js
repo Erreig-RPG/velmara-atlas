@@ -4,10 +4,10 @@
    ═══════════════════════════════════════════════
 
    COMO USAR:
-   1. Coloque a imagem do mapa em assets/map/velmara.jpg
+   1. Coloque a imagem do mapa na raiz: velmara.png
    2. Ajuste MAP_CONFIG.width e MAP_CONFIG.height para as
       dimensões reais da sua imagem
-   3. Edite data/locations.json para adicionar/editar locais
+   3. Edite locations.json para adicionar/editar locais
    4. Coordenadas nos JSON são em % [x%, y%] — 0,0 = topo-esquerdo
 
    MODO MESTRE:
@@ -20,7 +20,7 @@
    1. CONFIGURAÇÕES
 ──────────────────────────────────────────── */
 const MAP_CONFIG = {
-  imageUrl:    'assets/map/velmara.jpg',
+  imageUrl:    'velmara.png',
   width:       2048,   // ← Ajuste para largura da sua imagem (pixels)
   height:      1300,   // ← Ajuste para altura da sua imagem (pixels)
   minZoom:     -2,
@@ -83,7 +83,12 @@ function initMap() {
   const overlay = L.imageOverlay(MAP_CONFIG.imageUrl, bounds);
   overlay.addTo(state.map);
 
+  overlay.on('load', () => {
+    document.getElementById('loading-screen').classList.add('hidden');
+  });
+
   overlay.on('error', () => {
+    document.getElementById('loading-screen').classList.add('hidden');
     document.getElementById('map-placeholder').classList.remove('hidden');
   });
 
@@ -503,7 +508,7 @@ function onMapClick(e) {
       coords:      [parseFloat(xPct), parseFloat(yPct)],
       visibility:  type === 'secreto' ? 'secret' : 'public',
       region:      '',
-      short:       'Novo local — edite em data/locations.json',
+      short:       'Novo local — edite em locations.json',
       description: '',
     };
 
@@ -512,7 +517,7 @@ function onMapClick(e) {
     cancelAddMode();
 
     // Mostra as coordenadas para o usuário copiar para o JSON
-    const coordInfo = `Local criado!\n\nCopie estas coordenadas para o JSON:\n"coords": [${xPct}, ${yPct}]\n\nAdicione manualmente em data/locations.json para persistir.`;
+    const coordInfo = `Local criado!\n\nCopie estas coordenadas para o JSON:\n"coords": [${xPct}, ${yPct}]\n\nAdicione manualmente em locations.json para persistir.`;
     alert(coordInfo);
     return;
   }
@@ -649,7 +654,7 @@ function initPanelClose() {
 ──────────────────────────────────────────── */
 async function loadLocations() {
   try {
-    const resp = await fetch('data/locations.json');
+    const resp = await fetch('locations.json');
     if (!resp.ok) throw new Error('locations.json não encontrado');
     const data = await resp.json();
     state.locations = data.locations || [];
